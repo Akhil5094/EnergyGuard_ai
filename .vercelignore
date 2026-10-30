@@ -1,0 +1,9 @@
+# Prevent Vercel from detecting Python Serverless functions or running uv pip install
+requirements.txt
+backend/
+firmware/
+simulator/
+alembic.ini
+migrations/
+Dockerfile
+docker-compose.yml
