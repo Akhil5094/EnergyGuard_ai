@@ -1,0 +1,6 @@
+{
+  "name": "EnergyGuard AI",
+  "description": "IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

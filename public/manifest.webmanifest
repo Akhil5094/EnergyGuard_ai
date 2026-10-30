@@ -1,0 +1,18 @@
+{
+  "name": "EnergyGuard AI - Industrial Energy Monitoring & Optimization",
+  "short_name": "EnergyGuard AI",
+  "description": "IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"]
+}

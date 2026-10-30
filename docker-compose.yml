@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Relational Database for Energy Telemetry & Machine Registry
+  db:
+    image: postgres:15-alpine
+    container_name: energyguard-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: energyguard
+      POSTGRES_PASSWORD: energyguard_secret_2026
+      POSTGRES_DB: energyguard_production
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U energyguard -d energyguard_production"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Mosquitto MQTT Broker for ESP32 Sensor Telemetry Ingestion
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: energyguard-mosquitto
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - mosquitto_data:/mosquitto/data
+
+  # FastAPI Backend Service (Telemetry Ingestion, AI Anomaly, REST & WebSocket)
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: energyguard-backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://energyguard:energyguard_secret_2026@db:5432/energyguard_production
+      MQTT_BROKER_HOST: mosquitto
+      MQTT_BROKER_PORT: 1883
+      JWT_SECRET: energyguard_super_secure_jwt_token_2026
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      mosquitto:
+        condition: service_started
+
+  # React Frontend Dashboard
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: energyguard-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  mosquitto_data:

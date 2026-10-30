@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>EnergyGuard AI – Industrial Energy Monitoring & Optimization</title>
+    <meta name="description" content="IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment." />
+    
+    <!-- Icons and Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0b1120" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Open Graph / Social Cards -->
+    <meta property="og:title" content="EnergyGuard AI – Industrial Energy Monitoring & Optimization" />
+    <meta property="og:description" content="IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EnergyGuard AI – Industrial Energy Monitoring & Optimization" />
+    <meta name="twitter:description" content="IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment." />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EnergyGuard AI",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "description": "IoT-Enabled Intelligent Energy Monitoring & Optimization System for Small-Scale Manufacturing Industries with real-time telemetry, AI anomaly detection, and SDG 7/9 alignment.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Real-time machine-level electrical telemetry",
+        "ESP32 and SCT-013 non-invasive CT current sensing",
+        "MQTT telemetry stream over port 1883",
+        "Unsupervised Isolation Forest machine anomaly detection",
+        "Time-of-Day (TOD) electricity tariff optimization",
+        "Idle machine energy waste detection and auto-alerting",
+        "Interactive MSME energy savings and ROI calculator",
+        "UN SDG 7 and SDG 9 alignment and carbon footprint tracking"
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

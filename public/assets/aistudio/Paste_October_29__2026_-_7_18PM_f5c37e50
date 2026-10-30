@@ -1,0 +1,1907 @@
+# MASTER PROJECT PROMPT: ENERGYGUARD AI
+
+## 1. PROJECT TITLE
+
+EnergyGuard AI – IoT-Enabled Intelligent Energy Monitoring and Optimization System for Small-Scale Manufacturing Industries
+
+## 2. PROJECT OBJECTIVE
+
+Build a complete, professional, functional, full-stack web application named EnergyGuard AI.
+
+The application must monitor, analyze, visualize, and optimize electrical energy consumption in small-scale manufacturing industries using IoT sensors, real-time data communication, machine-level energy monitoring, AI-based anomaly detection, predictive alerts, and energy-saving recommendations.
+
+This is an academic engineering project based on the uploaded EnergyGuard AI poster and PowerPoint presentation.
+
+The application must represent the following project objectives:
+
+* Small manufacturing factories waste energy.
+* Factory owners lack real-time energy consumption information.
+* Machines may consume energy while idle.
+* Electrical bills are unnecessarily high.
+* Existing monitoring methods may detect problems only after machine failure.
+* Factory owners need affordable, understandable, and actionable energy monitoring.
+* The proposed solution uses low-cost IoT sensors, Wi-Fi, a live dashboard, and AI-assisted optimization.
+
+The application must support the United Nations Sustainable Development Goals:
+
+SDG 7: Affordable and Clean Energy.
+
+SDG 9: Industry, Innovation and Infrastructure.
+
+The primary users are small factory owners, supervisors, operators, energy managers, and maintenance personnel.
+
+The application must be designed for practical demonstration, academic evaluation, future hardware integration, and possible real-world deployment.
+
+IMPORTANT:
+
+Build the actual complete project.
+
+Do not stop after creating a frontend.
+
+Do not create only a dashboard mockup.
+
+Do not use static hardcoded readings as the only data source.
+
+Implement the frontend, backend, database, APIs, IoT integration, analytics, AI functionality, authentication, testing, and setup documentation.
+
+Clearly distinguish simulated data from real sensor data.
+
+==================================================
+3. REQUIRED TECHNOLOGY STACK
+============================
+
+Use the following technology stack.
+
+FRONTEND:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* shadcn/ui or an equivalent accessible component library
+* Recharts for charts
+* Lucide icons
+* React Router
+* Axios or Fetch API
+* React Hook Form
+* Zod for frontend validation
+
+BACKEND:
+
+* Python
+* FastAPI
+* Pydantic
+* SQLAlchemy
+* Alembic database migrations
+* REST API
+* WebSocket for real-time updates
+* MQTT integration using Paho MQTT
+
+DATABASE:
+
+* PostgreSQL for the primary production database
+* SQLite may be supported for simple local development if properly configured
+
+AI AND ANALYTICS:
+
+* Python
+* NumPy
+* Pandas
+* Scikit-learn
+* Isolation Forest for anomaly detection
+* Statistical baseline detection
+* Rule-based energy optimization recommendations
+
+IOT:
+
+* ESP32
+* Arduino framework
+* Wi-Fi
+* MQTT
+* Current sensors such as SCT-013 or appropriately rated energy monitoring modules
+* Voltage and power measurement through suitable isolated measurement hardware
+* MQTT broker such as Mosquitto
+
+DEPLOYMENT:
+
+* Docker
+* Docker Compose
+* Environment variables
+* PostgreSQL
+* MQTT broker
+* Backend container
+* Frontend container or integrated deployment
+* Production build configuration
+
+Use stable, mutually compatible package versions.
+
+Do not use unnecessary technologies.
+
+Do not replace the specified backend with Firebase-only logic or a frontend-only database.
+
+==================================================
+4. PROJECT ARCHITECTURE
+=======================
+
+Implement the following architecture:
+
+ESP32 + Energy Sensors
+|
+| Wi-Fi / MQTT
+|
+v
+MQTT Broker
+|
+v
+FastAPI Backend
+|
++---- Telemetry Processing
+|
++---- Energy Calculations
+|
++---- AI Anomaly Detection
+|
++---- Alert Generation
+|
++---- Optimization Recommendations
+|
+v
+PostgreSQL Database
+|
+v
+REST API + WebSocket
+|
+v
+React Dashboard
+|
++---- Factory Overview
++---- Machine Monitoring
++---- Energy Analytics
++---- AI Insights
++---- Alerts
++---- Reports
++---- Settings
+
+The application must support two operating modes:
+
+1. DEMO MODE
+
+Use simulated telemetry to demonstrate the complete application without physical hardware.
+
+2. REAL IOT MODE
+
+Receive telemetry from ESP32 devices through MQTT.
+
+The user must be able to identify whether the displayed readings are simulated or real.
+
+==================================================
+5. USER AUTHENTICATION
+======================
+
+Implement a complete authentication system.
+
+Features:
+
+* Login
+* Registration
+* Logout
+* Password hashing
+* JWT access tokens
+* Refresh tokens or secure session renewal
+* Protected routes
+* Role-based access control
+* User profile
+* Password change
+* Authentication error handling
+
+Roles:
+
+1. Factory Owner
+2. Energy Manager
+3. Supervisor
+4. Operator
+
+Permissions:
+
+Factory Owner:
+
+* Full factory access
+* Manage users
+* Manage machines
+* Configure electricity tariffs
+* View all analytics
+* Manage alerts
+* Export reports
+* Configure IoT devices
+
+Energy Manager:
+
+* View energy consumption
+* Manage machine monitoring
+* View AI recommendations
+* Manage alerts
+* Generate reports
+
+Supervisor:
+
+* Monitor machines
+* View analytics
+* View alerts
+* Resolve permitted alerts
+
+Operator:
+
+* View assigned machines
+* View energy readings
+* View machine status
+* Report issues
+
+Enforce authorization on the backend.
+
+Do not rely only on frontend route protection.
+
+Create a default demo account through a documented development seed process.
+
+Never hardcode production passwords.
+
+==================================================
+6. APPLICATION DESIGN
+=====================
+
+Create a professional industrial energy monitoring dashboard.
+
+Design inspiration:
+
+* Modern industrial SaaS
+* Clean white and light-gray surfaces
+* Dark navy sidebar
+* Blue primary actions
+* Green efficiency indicators
+* Amber warning indicators
+* Red critical indicators
+* Rounded cards
+* Clear typography
+* Professional charts
+* Responsive layouts
+
+Use a consistent design system.
+
+The application must look like a real industrial monitoring product rather than a simple student HTML page.
+
+DESKTOP:
+
+* Sidebar navigation
+* Top header
+* Factory selector
+* User profile
+* Notification indicator
+* Main content area
+
+MOBILE:
+
+* Responsive navigation
+* Mobile-friendly tables
+* Responsive charts
+* Accessible controls
+* Proper spacing
+* No horizontal overflow
+
+Provide loading states, empty states, error states, and success messages.
+
+Use accessible color contrast and semantic HTML.
+
+==================================================
+7. REQUIRED APPLICATION PAGES
+=============================
+
+Create the following pages.
+
+PAGE 1: LANDING PAGE
+
+Include:
+
+* EnergyGuard AI logo and branding
+* Project introduction
+* Problem statement
+* Proposed solution
+* Benefits
+* SDG 7 alignment
+* SDG 9 alignment
+* Features
+* Technology stack
+* Login button
+* Demo access button
+
+The landing page should explain that EnergyGuard AI helps small factories understand energy consumption, identify waste, and improve efficiency.
+
+PAGE 2: LOGIN AND REGISTRATION
+
+Include:
+
+* Email
+* Password
+* Login button
+* Registration
+* Password visibility
+* Form validation
+* Authentication error messages
+* Demo account information in development mode
+
+PAGE 3: MAIN DASHBOARD
+
+Create a complete dashboard.
+
+Display:
+
+1. Total energy consumption in kWh
+2. Estimated electricity cost in INR
+3. Current power demand in kW
+4. Active machines
+5. Offline machines
+6. Energy efficiency indicator
+7. Active alerts
+8. Estimated energy savings
+9. Machine energy consumption chart
+10. Energy consumption trends
+11. Recent alerts
+12. AI recommendations
+
+Include date filters:
+
+* Today
+* Yesterday
+* Last 7 days
+* Last 30 days
+* Custom date range
+
+Dashboard values must be calculated from actual stored telemetry or clearly labeled demo data.
+
+Do not invent real factory measurements.
+
+PAGE 4: MACHINE MANAGEMENT
+
+Implement complete machine management.
+
+Users must be able to:
+
+* Add machines
+* Edit machines
+* Delete machines
+* View machine details
+* Search machines
+* Filter machines
+* Assign machine categories
+* Assign IoT device IDs
+* Configure rated power
+* Configure location
+* Configure machine operating status
+
+Machine fields:
+
+* Machine ID
+* Machine name
+* Machine type
+* Factory ID
+* Location
+* ESP32 device ID
+* Rated power in kW
+* Current power in kW
+* Total energy consumption in kWh
+* Voltage
+* Current
+* Power factor
+* Machine status
+* Last communication
+* Installation date
+
+Machine statuses:
+
+* Running
+* Idle
+* Offline
+* Maintenance
+* Warning
+
+Create individual machine detail pages.
+
+Display:
+
+* Live readings
+* Power consumption
+* Voltage
+* Current
+* Energy history
+* Machine status
+* AI anomaly detection
+* Machine-specific alerts
+* Operating history
+
+PAGE 5: LIVE ENERGY MONITORING
+
+Create real-time energy monitoring.
+
+Features:
+
+* Live power consumption
+* Voltage
+* Current
+* Power factor
+* Energy consumption
+* Machine status
+* Last update timestamp
+* Sensor connectivity
+
+Use WebSocket for live dashboard updates.
+
+Use MQTT for receiving sensor data.
+
+The backend must validate telemetry before processing it.
+
+Display a clear connection indicator:
+
+* Connected
+* Disconnected
+* Reconnecting
+
+Implement reconnect logic.
+
+If the device disconnects, do not display old values as if they were live.
+
+Show the last received timestamp.
+
+==================================================
+8. ENERGY CALCULATIONS
+======================
+
+Implement energy calculations correctly.
+
+Active power:
+
+P(kW) = Voltage(V) × Current(A) × Power Factor / 1000
+
+Energy:
+
+Energy(kWh) = Power(kW) × Time(hours)
+
+For interval-based telemetry:
+
+Energy(kWh) = Power(kW) × Interval(seconds) / 3600
+
+Electricity cost:
+
+Cost(INR) = Energy(kWh) × Tariff(INR/kWh)
+
+Calculate:
+
+* Machine-level energy consumption
+* Factory-level energy consumption
+* Daily consumption
+* Weekly consumption
+* Monthly consumption
+* Estimated electricity cost
+* Peak demand
+* Average power demand
+* Idle energy consumption
+* Energy consumption by machine category
+
+Avoid double-counting cumulative energy.
+
+Prefer validated meter energy readings when available.
+
+Clearly document assumptions.
+
+For three-phase systems, implement the appropriate measurement formula only when the sensor data and wiring configuration support it.
+
+Do not treat a single-phase approximation as a validated three-phase measurement.
+
+==================================================
+9. ENERGY ANALYTICS
+===================
+
+Create a dedicated analytics page.
+
+Include:
+
+* Daily energy consumption chart
+* Weekly consumption chart
+* Monthly consumption chart
+* Machine comparison chart
+* Machine category comparison
+* Power demand trend
+* Peak demand
+* Energy cost trend
+* Idle energy consumption
+* Energy consumption distribution
+
+Use:
+
+* Line charts
+* Bar charts
+* Area charts
+* Pie or donut charts where useful
+
+All charts must use actual API data.
+
+Implement date filters.
+
+Provide CSV export.
+
+Provide a report summary.
+
+Do not fabricate percentage savings.
+
+==================================================
+10. AI ANOMALY DETECTION
+========================
+
+Implement a working AI anomaly detection module.
+
+Use Isolation Forest or another appropriate unsupervised anomaly detection method.
+
+Features may include:
+
+* Power consumption
+* Current
+* Voltage
+* Machine operating status
+* Historical consumption
+* Time of day
+* Machine operating patterns
+
+The model must:
+
+1. Receive validated telemetry.
+2. Retrieve relevant historical readings.
+3. Detect unusual patterns.
+4. Generate an anomaly score.
+5. Classify the anomaly.
+6. Save anomaly records.
+7. Generate alerts when thresholds are exceeded.
+8. Display the result in the dashboard.
+
+Anomaly categories:
+
+* Unusually high energy consumption
+* Unexpected power spike
+* Idle energy waste
+* Abnormal operating pattern
+* Sensor reading anomaly
+* Potential machine malfunction
+
+IMPORTANT:
+
+Do not claim that the AI can accurately predict machine failure without validated training data.
+
+If insufficient historical data exists:
+
+* Use a documented statistical fallback.
+* Show that the model is warming up.
+* Avoid presenting unsupported AI accuracy.
+* Do not fabricate training datasets or model performance.
+
+Create:
+
+* Model training script
+* Model persistence
+* Model loading
+* Anomaly scoring API
+* Model evaluation report
+* Sample demonstration dataset
+
+Clearly distinguish statistical rules from trained machine learning predictions.
+
+==================================================
+11. AI ENERGY OPTIMIZATION
+==========================
+
+Create an AI-assisted energy optimization module.
+
+Analyze:
+
+* Idle machine power
+* Machine operating schedules
+* Energy consumption patterns
+* High power demand
+* Repeated energy spikes
+* Consumption compared with machine baselines
+
+Generate recommendations such as:
+
+* Reduce unnecessary idle operation
+* Review compressed air system leakage
+* Investigate unusually high motor consumption
+* Schedule equipment operation efficiently
+* Review peak electricity demand
+* Inspect machines with unusual energy patterns
+
+Each recommendation must include:
+
+* Recommendation ID
+* Machine ID
+* Title
+* Explanation
+* Priority
+* Estimated opportunity
+* Confidence or evidence level
+* Created timestamp
+* Status
+* Suggested action
+
+Priority:
+
+* Low
+* Medium
+* High
+* Critical
+
+IMPORTANT:
+
+Estimated savings must be calculated using documented assumptions.
+
+Do not automatically claim that the project saves 60% of electricity.
+
+Use actual baseline consumption and explicit assumptions.
+
+Show savings as an estimate until validated.
+
+==================================================
+12. ALERT MANAGEMENT
+====================
+
+Implement a complete alert system.
+
+Alert types:
+
+* High energy consumption
+* Idle machine energy waste
+* Unusual power consumption
+* Machine offline
+* Sensor disconnected
+* Voltage abnormality
+* AI anomaly
+* Peak demand warning
+
+Alert fields:
+
+* Alert ID
+* Factory ID
+* Machine ID
+* Alert type
+* Severity
+* Title
+* Description
+* Triggered value
+* Threshold
+* Timestamp
+* Status
+* Assigned user
+* Resolution notes
+* Resolved timestamp
+
+Features:
+
+* Alert list
+* Alert details
+* Search
+* Filtering
+* Sorting
+* Severity indicators
+* Resolve alert
+* Acknowledge alert
+* Alert history
+* Notification indicator
+
+Prevent duplicate alerts from being generated repeatedly for the same ongoing condition.
+
+Provide configurable thresholds.
+
+==================================================
+13. IOT DEVICE MANAGEMENT
+=========================
+
+Create an IoT device management page.
+
+Features:
+
+* Register ESP32 devices
+* Edit device
+* Delete device
+* Assign device to machine
+* Device status
+* MQTT topic
+* Last communication
+* Firmware version
+* Sensor type
+* Device configuration
+
+Device fields:
+
+* Device ID
+* Machine ID
+* Device name
+* MQTT topic
+* Device status
+* Firmware version
+* Sensor configuration
+* Last seen
+* Installation date
+
+Implement device connectivity monitoring.
+
+Use a configurable timeout to mark devices offline.
+
+Provide a device connection troubleshooting section.
+
+==================================================
+14. MQTT INTEGRATION
+====================
+
+Implement MQTT communication.
+
+Use Mosquitto or another configurable MQTT broker.
+
+Example topic:
+
+energyguard/telemetry/EG-N01
+
+Example payload:
+
+{
+"device_id": "EG-N01",
+"machine_id": "MACHINE-001",
+"timestamp": "ISO-8601 timestamp",
+"voltage_v": 230.0,
+"current_a": 5.2,
+"power_factor": 0.95,
+"power_kw": 1.13,
+"interval_seconds": 60,
+"energy_kwh": 0.0188,
+"status": "running"
+}
+
+Validate:
+
+* Device identity
+* Timestamp
+* Voltage
+* Current
+* Power factor
+* Energy
+* Machine assignment
+
+Handle:
+
+* Invalid payloads
+* Duplicate messages
+* Disconnected broker
+* Reconnection
+* MQTT authentication
+* Topic validation
+
+Save valid readings in the database.
+
+Broadcast new readings to connected frontend clients through WebSocket.
+
+Create a separate MQTT service module.
+
+Do not block the FastAPI event loop with synchronous MQTT operations.
+
+==================================================
+15. ESP32 FIRMWARE
+==================
+
+Provide complete ESP32 firmware.
+
+Use:
+
+* Arduino framework
+* ESP32
+* Wi-Fi
+* MQTT
+* Current measurement
+* Voltage measurement where supported
+* Power factor configuration or measurement
+* Energy calculation
+* Device identification
+
+Firmware functionality:
+
+1. Connect to Wi-Fi.
+2. Connect to MQTT broker.
+3. Read sensor data.
+4. Validate sensor values.
+5. Calculate electrical measurements where appropriate.
+6. Publish telemetry at configurable intervals.
+7. Reconnect automatically.
+8. Display connection state over Serial.
+9. Send device identification.
+10. Send timestamps or uptime.
+11. Support configurable machine operating status.
+
+Include:
+
+* Firmware source
+* Wiring documentation
+* Sensor calibration instructions
+* MQTT configuration
+* Troubleshooting
+
+Use a safe sensor interface.
+
+Never connect mains voltage directly to the ESP32.
+
+Use properly rated isolated measurement equipment.
+
+Clearly explain that current-only sensors with assumed voltage and power factor produce estimated energy rather than validated energy measurements.
+
+==================================================
+16. DEMO MODE AND SIMULATOR
+===========================
+
+Implement a complete simulator.
+
+The simulator must generate realistic, clearly identified sample readings for several machines.
+
+Machine examples:
+
+* CNC machine
+* Air compressor
+* Hydraulic press
+* Cooling pump
+* Assembly motor
+
+Generate:
+
+* Running readings
+* Idle readings
+* Offline periods
+* Different machine power levels
+* Small variations
+* Occasional anomaly scenarios
+
+The simulator must:
+
+* Be configurable
+* Have a start/stop control
+* Use a defined sampling interval
+* Persist generated readings
+* Trigger dashboard updates
+* Support anomaly demonstrations
+
+Provide a clear DEMO MODE label.
+
+Do not mix demo readings with actual sensor readings without identifying the source.
+
+==================================================
+17. DATABASE DESIGN
+===================
+
+Use SQLAlchemy models and PostgreSQL.
+
+Create migrations.
+
+Required tables:
+
+USERS
+
+* id
+* name
+* email
+* password_hash
+* role
+* created_at
+* updated_at
+
+FACTORIES
+
+* id
+* name
+* address
+* timezone
+* electricity_tariff
+* created_at
+
+MACHINES
+
+* id
+* factory_id
+* name
+* machine_type
+* location
+* rated_power_kw
+* status
+* created_at
+* updated_at
+
+IOT_DEVICES
+
+* id
+* device_id
+* machine_id
+* mqtt_topic
+* firmware_version
+* connection_status
+* last_seen
+* created_at
+
+ENERGY_READINGS
+
+* id
+* factory_id
+* machine_id
+* device_id
+* timestamp
+* voltage_v
+* current_a
+* power_factor
+* power_kw
+* energy_kwh
+* operating_status
+* source
+
+ANOMALIES
+
+* id
+* machine_id
+* reading_id
+* anomaly_type
+* anomaly_score
+* description
+* created_at
+
+ALERTS
+
+* id
+* factory_id
+* machine_id
+* alert_type
+* severity
+* title
+* description
+* status
+* created_at
+* resolved_at
+
+RECOMMENDATIONS
+
+* id
+* machine_id
+* title
+* description
+* priority
+* estimated_savings_kwh
+* evidence
+* status
+* created_at
+
+SETTINGS
+
+* id
+* factory_id
+* key
+* value
+* updated_at
+
+Implement:
+
+* Foreign keys
+* Database indexes
+* Unique constraints
+* Validation
+* Relationships
+* Pagination
+* Migration support
+
+Store timestamps consistently.
+
+Use timezone-aware timestamps.
+
+==================================================
+18. BACKEND API
+===============
+
+Implement REST APIs.
+
+AUTHENTICATION:
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+POST /api/auth/refresh
+
+POST /api/auth/logout
+
+GET /api/auth/me
+
+FACTORY:
+
+GET /api/factories
+
+POST /api/factories
+
+GET /api/factories/{factory_id}
+
+PUT /api/factories/{factory_id}
+
+MACHINES:
+
+GET /api/machines
+
+POST /api/machines
+
+GET /api/machines/{machine_id}
+
+PUT /api/machines/{machine_id}
+
+DELETE /api/machines/{machine_id}
+
+DEVICES:
+
+GET /api/devices
+
+POST /api/devices
+
+GET /api/devices/{device_id}
+
+PUT /api/devices/{device_id}
+
+DELETE /api/devices/{device_id}
+
+TELEMETRY:
+
+POST /api/telemetry
+
+GET /api/telemetry
+
+GET /api/telemetry/latest
+
+GET /api/telemetry/{machine_id}
+
+ANALYTICS:
+
+GET /api/analytics/overview
+
+GET /api/analytics/energy
+
+GET /api/analytics/cost
+
+GET /api/analytics/machines
+
+GET /api/analytics/peak-demand
+
+AI:
+
+GET /api/ai/anomalies
+
+POST /api/ai/analyze
+
+GET /api/ai/recommendations
+
+POST /api/ai/train
+
+ALERTS:
+
+GET /api/alerts
+
+GET /api/alerts/{alert_id}
+
+POST /api/alerts/{alert_id}/acknowledge
+
+POST /api/alerts/{alert_id}/resolve
+
+REPORTS:
+
+GET /api/reports/energy
+
+GET /api/reports/machines
+
+GET /api/reports/export
+
+SETTINGS:
+
+GET /api/settings
+
+PUT /api/settings
+
+SYSTEM:
+
+GET /api/health
+
+GET /api/system/status
+
+WEBSOCKET:
+
+/ws/telemetry
+
+/ws/alerts
+
+Use proper HTTP status codes.
+
+Use Pydantic request and response schemas.
+
+Provide consistent error responses.
+
+Document all APIs using FastAPI Swagger.
+
+==================================================
+19. REPORT GENERATION
+=====================
+
+Create an energy report module.
+
+Reports must include:
+
+* Factory name
+* Report period
+* Total energy consumption
+* Estimated electricity cost
+* Machine energy comparison
+* Peak demand
+* Idle energy consumption
+* Alerts
+* AI recommendations
+* Data source information
+
+Implement:
+
+* CSV export
+* PDF report generation if feasible
+* Date range filtering
+* Machine filtering
+
+Report calculations must use database data.
+
+==================================================
+20. SETTINGS
+============
+
+Create a settings page.
+
+Factory settings:
+
+* Factory name
+* Location
+* Electricity tariff
+* Currency
+* Timezone
+
+Monitoring settings:
+
+* Telemetry interval
+* Offline timeout
+* Alert thresholds
+* Idle detection threshold
+
+IoT settings:
+
+* MQTT broker configuration
+* MQTT topic
+* Device settings
+
+AI settings:
+
+* Anomaly sensitivity
+* Detection enabled
+* Recommendation enabled
+
+Security:
+
+* Do not expose MQTT passwords.
+* Do not expose secret keys.
+* Do not return credentials in frontend API responses.
+
+==================================================
+21. SECURITY REQUIREMENTS
+=========================
+
+Implement:
+
+* Password hashing
+* JWT authentication
+* Role-based authorization
+* CORS configuration
+* Environment variables
+* Input validation
+* SQL injection protection
+* Secure error handling
+* Rate limiting for sensitive endpoints
+* MQTT authentication
+* Secret management
+* Secure WebSocket authorization
+
+Do not store passwords in plaintext.
+
+Do not commit .env files.
+
+Provide .env.example.
+
+Do not expose database credentials.
+
+Do not trust telemetry supplied by an arbitrary device.
+
+==================================================
+22. TESTING
+===========
+
+Create automated tests.
+
+Backend:
+
+* Authentication tests
+* Machine CRUD tests
+* Telemetry ingestion tests
+* Energy calculation tests
+* Alert tests
+* Anomaly detection tests
+* Settings tests
+* Authorization tests
+
+Frontend:
+
+* Component tests
+* API integration tests
+* Form validation tests
+* Dashboard rendering tests
+
+Use pytest for backend testing.
+
+Use an appropriate React testing framework.
+
+Provide test instructions.
+
+Ensure tests do not depend on a real MQTT broker unless specifically configured.
+
+==================================================
+23. PROJECT DIRECTORY STRUCTURE
+===============================
+
+Create a clean, professional project structure.
+
+energyguard-ai/
+
+frontend/
+
+```
+src/
+
+    components/
+
+    pages/
+
+    layouts/
+
+    hooks/
+
+    services/
+
+    contexts/
+
+    types/
+
+    utils/
+
+    charts/
+
+    styles/
+
+backend/
+
+app/
+
+    api/
+
+    core/
+
+    models/
+
+    schemas/
+
+    services/
+
+    ai/
+
+    mqtt/
+
+    database/
+
+    tests/
+
+firmware/
+
+    esp32/
+
+simulator/
+
+docs/
+
+migrations/
+
+docker-compose.yml
+
+Dockerfile
+
+requirements.txt
+
+package.json
+
+.env.example
+
+README.md
+
+LICENSE
+```
+
+Adapt this structure if necessary, but keep frontend, backend, firmware, and documentation logically separated.
+
+==================================================
+24. DOCKER DEPLOYMENT
+=====================
+
+Create Docker configuration.
+
+Docker Compose must include:
+
+* Frontend
+* Backend
+* PostgreSQL
+* MQTT broker
+
+Provide:
+
+* Dockerfiles
+* Docker Compose configuration
+* Environment configuration
+* Database initialization
+* Migration execution
+* Health checks
+* Persistent database volume
+
+The entire backend infrastructure must be launchable using:
+
+docker compose up --build
+
+Document how to access the application.
+
+==================================================
+25. REQUIRED DOCUMENTATION
+==========================
+
+Generate a complete README.
+
+Include:
+
+1. Project title
+2. Abstract
+3. Introduction
+4. Problem statement
+5. Objectives
+6. Proposed system
+7. System architecture
+8. Technology stack
+9. Features
+10. Hardware requirements
+11. Software requirements
+12. Installation
+13. Configuration
+14. Database setup
+15. Backend startup
+16. Frontend startup
+17. MQTT setup
+18. ESP32 setup
+19. API documentation
+20. Testing
+21. Demo mode
+22. Real hardware mode
+23. Limitations
+24. Future scope
+25. SDG alignment
+
+Also create:
+
+* Project report
+* System architecture diagram
+* Database ER diagram
+* API documentation
+* Hardware wiring guide
+* Sensor calibration guide
+* Installation guide
+* Troubleshooting guide
+* Demonstration guide
+
+==================================================
+26. PROJECT ALIGNMENT WITH THE UPLOADED POSTER
+==============================================
+
+Preserve the following project identity.
+
+PROJECT:
+
+EnergyGuard AI – IoT-Enabled Intelligent Energy Monitoring and Optimization System for Small-Scale Manufacturing Industries.
+
+PROBLEM STATEMENT:
+
+Small factories waste energy.
+
+They lack real-time data.
+
+They face high electricity bills.
+
+They may detect problems only after breakdown.
+
+EMPATHY MAP:
+
+SAYS:
+
+"Why is my bill so high?"
+
+THINKS:
+
+"I'm losing money."
+
+DOES:
+
+"Checks only when broken."
+
+FEELS:
+
+"Frustrated and helpless."
+
+PROPOSED SOLUTION:
+
+Low-cost IoT sensors.
+
+Wi-Fi connectivity.
+
+Live mobile-friendly dashboard.
+
+AI-assisted optimization.
+
+Predictive alerts.
+
+BENEFITS:
+
+Real-time visibility.
+
+Less energy waste.
+
+Lower electricity bills when validated savings are achieved.
+
+Predictive alerts.
+
+Greener production.
+
+TARGET USERS:
+
+Small factory owners.
+
+Factory supervisors.
+
+Energy managers.
+
+Machine operators.
+
+VISION:
+
+Smart, green, and profitable factories with reduced energy waste.
+
+SDG ALIGNMENT:
+
+SDG 7.
+
+SDG 9.
+
+Do not silently change the project into a generic smart-home energy monitoring application.
+
+==================================================
+27. FUNCTIONAL REQUIREMENTS
+===========================
+
+The completed application must support the following end-to-end workflows.
+
+WORKFLOW 1:
+
+User registers.
+
+User logs in.
+
+User creates or selects a factory.
+
+User registers a machine.
+
+User assigns an IoT device.
+
+User views machine status.
+
+WORKFLOW 2:
+
+ESP32 measures sensor values.
+
+ESP32 publishes MQTT telemetry.
+
+Backend receives MQTT telemetry.
+
+Backend validates the data.
+
+Backend calculates energy consumption.
+
+Backend saves readings.
+
+Dashboard updates.
+
+WORKFLOW 3:
+
+AI analyzes incoming readings.
+
+AI detects unusual consumption.
+
+Backend creates an alert.
+
+Dashboard displays the alert.
+
+User reviews and resolves the alert.
+
+WORKFLOW 4:
+
+Analytics retrieves historical readings.
+
+Application calculates energy usage.
+
+Application calculates electricity cost.
+
+Application displays charts.
+
+User exports a report.
+
+WORKFLOW 5:
+
+Demo simulator generates readings.
+
+Dashboard receives updates.
+
+AI anomaly detection processes simulated data.
+
+Alerts are generated.
+
+User can demonstrate the system without physical sensors.
+
+==================================================
+28. NON-FUNCTIONAL REQUIREMENTS
+===============================
+
+Performance:
+
+* Efficient database queries
+* Pagination
+* Indexed timestamps
+* Efficient chart rendering
+* Asynchronous telemetry processing
+
+Reliability:
+
+* MQTT reconnection
+* Backend error handling
+* Database persistence
+* Offline status
+* Graceful failure
+
+Maintainability:
+
+* Modular code
+* Clear naming
+* Type hints
+* Documentation
+* Reusable components
+
+Usability:
+
+* Simple dashboard
+* Clear navigation
+* Readable charts
+* Responsive design
+* Accessible controls
+
+Scalability:
+
+* Multiple factories
+* Multiple machines
+* Multiple IoT devices
+* Historical data
+* Extensible APIs
+
+==================================================
+29. IMPLEMENTATION RULES
+========================
+
+Follow these rules carefully.
+
+RULE 1:
+
+Build a working application, not just a design.
+
+RULE 2:
+
+Do not leave major pages as placeholders.
+
+RULE 3:
+
+Do not create fake API responses in the production application.
+
+RULE 4:
+
+Use real database persistence.
+
+RULE 5:
+
+Use environment variables for configuration.
+
+RULE 6:
+
+Keep frontend and backend responsibilities separate.
+
+RULE 7:
+
+Implement the actual MQTT ingestion flow.
+
+RULE 8:
+
+Implement the actual energy calculation logic.
+
+RULE 9:
+
+Implement AI anomaly detection with documented limitations.
+
+RULE 10:
+
+Provide a simulator for hardware-free demonstrations.
+
+RULE 11:
+
+Do not claim that actual sensors are connected when they are not.
+
+RULE 12:
+
+Do not claim validated energy savings without measurement evidence.
+
+RULE 13:
+
+Do not claim machine failure prediction without appropriate data and evaluation.
+
+RULE 14:
+
+Do not skip authentication and backend authorization.
+
+RULE 15:
+
+Do not stop after generating the project structure.
+
+RULE 16:
+
+Install dependencies and run available tests where the environment supports it.
+
+RULE 17:
+
+Fix implementation errors before declaring completion.
+
+RULE 18:
+
+Do not claim tests passed if they were not executed.
+
+RULE 19:
+
+Keep the source code organized and understandable for a college project.
+
+RULE 20:
+
+Document all assumptions and limitations.
+
+==================================================
+30. FINAL DELIVERABLES
+======================
+
+Deliver the following:
+
+1. Complete frontend source code.
+2. Complete backend source code.
+3. Database models.
+4. Database migrations.
+5. Authentication system.
+6. REST APIs.
+7. WebSocket integration.
+8. MQTT integration.
+9. ESP32 firmware.
+10. Sensor configuration documentation.
+11. Demo simulator.
+12. AI anomaly detection.
+13. Energy optimization recommendations.
+14. Alert management.
+15. Analytics dashboard.
+16. CSV report export.
+17. Docker configuration.
+18. Environment configuration.
+19. Automated tests.
+20. README.
+21. Project report.
+22. System architecture diagram.
+23. Database ER diagram.
+24. Installation guide.
+25. Hardware setup guide.
+
+Provide the complete project as a downloadable ZIP if the environment supports file creation.
+
+Also provide:
+
+* Exact installation commands
+* Exact startup commands
+* Default development account information
+* Database initialization instructions
+* MQTT setup instructions
+* ESP32 firmware configuration instructions
+* API documentation URL
+* Testing instructions
+
+==================================================
+31. ACCEPTANCE CRITERIA
+=======================
+
+The project is considered complete only when the following conditions are satisfied.
+
+[ ] Frontend builds successfully.
+
+[ ] Backend starts successfully.
+
+[ ] Database initializes successfully.
+
+[ ] Login works.
+
+[ ] Protected routes work.
+
+[ ] Machine registration works.
+
+[ ] Machine editing works.
+
+[ ] Machine deletion works.
+
+[ ] Telemetry ingestion works.
+
+[ ] Energy calculations work.
+
+[ ] Dashboard reads database data.
+
+[ ] Charts display API data.
+
+[ ] Alerts are generated.
+
+[ ] Alerts can be resolved.
+
+[ ] AI anomaly detection executes.
+
+[ ] Recommendations are generated.
+
+[ ] Demo simulator works.
+
+[ ] MQTT integration is implemented.
+
+[ ] ESP32 firmware is included.
+
+[ ] CSV export works.
+
+[ ] Settings persist.
+
+[ ] Tests are included and executed where possible.
+
+[ ] Docker Compose configuration is included.
+
+[ ] README contains setup instructions.
+
+[ ] Demo data is clearly identified.
+
+[ ] Real sensor integration limitations are documented.
+
+==================================================
+32. DEVELOPMENT EXECUTION PLAN
+==============================
+
+Build the project in the following order.
+
+PHASE 1:
+
+Set up the complete project structure.
+
+Configure frontend and backend.
+
+Configure database.
+
+PHASE 2:
+
+Implement database models.
+
+Implement authentication.
+
+Implement machine management.
+
+PHASE 3:
+
+Implement telemetry ingestion.
+
+Implement energy calculations.
+
+Implement MQTT integration.
+
+PHASE 4:
+
+Implement dashboard.
+
+Implement analytics.
+
+Implement WebSocket updates.
+
+PHASE 5:
+
+Implement AI anomaly detection.
+
+Implement recommendations.
+
+Implement alerts.
+
+PHASE 6:
+
+Implement simulator.
+
+Implement ESP32 firmware.
+
+PHASE 7:
+
+Implement reports.
+
+Implement settings.
+
+PHASE 8:
+
+Implement tests.
+
+Implement Docker.
+
+Complete documentation.
+
+PHASE 9:
+
+Run the application.
+
+Test all workflows.
+
+Fix errors.
+
+Verify final deliverables.
+
+==================================================
+33. FINAL INSTRUCTION
+=====================
+
+Start building EnergyGuard AI now.
+
+Use the uploaded poster and PowerPoint as the project reference.
+
+Preserve the original project identity, target users, problem statement, proposed low-cost solution, benefits, SDG alignment, and vision.
+
+Create the full-stack implementation.
+
+Do not merely explain how to build it.
+
+Do not provide only a plan.
+
+Write the actual source files.
+
+Build all required modules.
+
+Make the application functional.
+
+Run tests where possible.
+
+Verify the project structure.
+
+Provide the complete source code and setup instructions.
+
+If a feature cannot be fully implemented in the current environment, implement the closest functional version, clearly document the limitation, and never falsely claim it is complete.
+
+The final output must be a complete, maintainable, extensible, educational full-stack EnergyGuard AI project suitable for demonstration, academic evaluation, and future real IoT deployment.
